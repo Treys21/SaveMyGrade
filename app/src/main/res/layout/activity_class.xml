@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,27 +13,44 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="154dp"
+            android:layout_height="102dp"
             android:orientation="horizontal">
-            android:id="@+id/editText3"
 
-            <EditText
-                android:id="@+id/calculate"
+            <TextView
+                android:id="@+id/titleRemove"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="102dp"
                 android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Calculate" />
+                android:gravity="center"
+                android:text="Remove"
+                android:textSize="18dp" />
 
-            <EditText
-                android:id="@+id/desiredGrade"
+            <TextView
+                android:id="@+id/titleName"
+                android:layout_width="175dp"
+                android:layout_height="102dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Category Name"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/titleWeight"
+                android:gravity="center"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="102dp"
+                android:textSize="18dp"
                 android:layout_weight="1"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                android:text="Weight(%)" />
 
+            <TextView
+                android:id="@+id/titleGrade"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="102dp"
+                android:textSize="18dp"
+                android:layout_weight="1"
+                android:text="Grade(%)" />
         </LinearLayout>
 
         <LinearLayout
@@ -43,13 +60,13 @@
 
             <Button
                 android:id="@+id/remove1"
-                android:layout_width="67dp"
+                android:layout_width="56dp"
                 android:layout_height="match_parent"
-                android:text="Remove" />
+                android:text="X" />
 
             <EditText
                 android:id="@+id/name1"
-                android:layout_width="wrap_content"
+                android:layout_width="322dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
@@ -71,6 +88,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="numberDecimal" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -80,13 +98,13 @@
 
             <Button
                 android:id="@+id/remove2"
-                android:layout_width="67dp"
+                android:layout_width="56dp"
                 android:layout_height="match_parent"
-                android:text="Remove" />
+                android:text="X" />
 
             <EditText
                 android:id="@+id/name2"
-                android:layout_width="wrap_content"
+                android:layout_width="321dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
@@ -117,13 +135,13 @@
 
             <Button
                 android:id="@+id/remove3"
-                android:layout_width="67dp"
+                android:layout_width="56dp"
                 android:layout_height="match_parent"
-                android:text="Remove" />
+                android:text="X" />
 
             <EditText
                 android:id="@+id/name3"
-                android:layout_width="wrap_content"
+                android:layout_width="320dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
@@ -154,13 +172,13 @@
 
             <Button
                 android:id="@+id/remove4"
-                android:layout_width="67dp"
+                android:layout_width="56dp"
                 android:layout_height="match_parent"
-                android:text="Remove" />
+                android:text="X" />
 
             <EditText
                 android:id="@+id/name4"
-                android:layout_width="wrap_content"
+                android:layout_width="322dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
@@ -191,13 +209,13 @@
 
             <Button
                 android:id="@+id/remove5"
-                android:layout_width="68dp"
+                android:layout_width="57dp"
                 android:layout_height="match_parent"
-                android:text="Remove" />
+                android:text="X" />
 
             <EditText
                 android:id="@+id/name5"
-                android:layout_width="wrap_content"
+                android:layout_width="319dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
@@ -227,15 +245,32 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
+            <Button
+                android:id="@+id/calulcate"
+                android:layout_width="115dp"
+                android:layout_height="match_parent"
+                android:text="Calculate" />
+
             <EditText
+                android:id="@+id/desiredGrade"
+                android:layout_width="16dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text="Desired Grade"
+                android:gravity="center"/>
+
+            <TextView
                 android:id="@+id/finalGrade"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                android:gravity="center"
+                android:text=""
+                android:textSize="18dp" />
         </LinearLayout>
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
