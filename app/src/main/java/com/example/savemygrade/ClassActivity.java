@@ -22,6 +22,7 @@ public class ClassActivity extends AppCompatActivity {
     private double[] grades;
     private double desiredGrade;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,9 +99,11 @@ public class ClassActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 LinearLayout firstRow = findViewById(R.id.LinearLayout2);
-                ((EditText) firstRow.findViewById(R.id.weight1)).setText("");
+                firstRow.setVisibility(View.GONE);
+                //((EditText) firstRow.findViewById(R.id.weight1)).setText("");
 
-                ((EditText) firstRow.findViewById(R.id.grade1)).setText("");
+                //((EditText) firstRow.findViewById(R.id.grade1)).setText("");
+
             }
         });
 
@@ -109,8 +112,10 @@ public class ClassActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 LinearLayout secondRow = findViewById(R.id.LinearLayout3);
-                ((EditText) secondRow.findViewById(R.id.weight2)).setText("");
-                ((EditText) secondRow.findViewById(R.id.grade2)).setText("");
+                secondRow.setVisibility(View.GONE);
+
+                //((EditText) secondRow.findViewById(R.id.weight2)).setText("");
+                //((EditText) secondRow.findViewById(R.id.grade2)).setText("");
 
             }
         });
@@ -120,8 +125,10 @@ public class ClassActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 LinearLayout thirdRow = findViewById(R.id.LinearLayout4);
-                ((EditText) thirdRow.findViewById(R.id.weight3)).setText("");
-                ((EditText) thirdRow.findViewById(R.id.grade3)).setText("");
+                thirdRow.setVisibility(View.GONE);
+
+                //((EditText) thirdRow.findViewById(R.id.weight3)).setText("");
+                //((EditText) thirdRow.findViewById(R.id.grade3)).setText("");
 
             }
         });
@@ -131,8 +138,10 @@ public class ClassActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 LinearLayout fourthRow = findViewById(R.id.LinearLayout5);
-                ((EditText) fourthRow.findViewById(R.id.weight4)).setText("");
-                ((EditText) fourthRow.findViewById(R.id.grade4)).setText("");
+                fourthRow.setVisibility(View.GONE);
+
+               // ((EditText) fourthRow.findViewById(R.id.weight4)).setText("");
+                //((EditText) fourthRow.findViewById(R.id.grade4)).setText("");
 
             }
         });
@@ -142,8 +151,10 @@ public class ClassActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 LinearLayout fifthRow = findViewById(R.id.LinearLayout6);
-                ((EditText) fifthRow.findViewById(R.id.weight5)).setText("");
-                ((EditText) fifthRow.findViewById(R.id.grade5)).setText("");
+                fifthRow.setVisibility(View.GONE);
+
+                //((EditText) fifthRow.findViewById(R.id.weight5)).setText("");
+                //((EditText) fifthRow.findViewById(R.id.grade5)).setText("");
             }
         });
 
@@ -152,6 +163,8 @@ public class ClassActivity extends AppCompatActivity {
     }
 
     public void calculateGrade() {
+
+
         double gradeNeeded = 0;
         double lastWeight = 100;
 
