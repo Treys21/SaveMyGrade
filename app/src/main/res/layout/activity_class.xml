@@ -79,7 +79,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="numberDecimal" />
 
             <EditText
                 android:id="@+id/grade1"
@@ -117,7 +117,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="numberDecimal" />
 
             <EditText
                 android:id="@+id/grade2"
@@ -154,7 +154,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="numberDecimal" />
 
             <EditText
                 android:id="@+id/grade3"
@@ -191,7 +191,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="numberDecimal" />
 
             <EditText
                 android:id="@+id/grade4"
@@ -228,7 +228,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="numberDecimal" />
 
             <EditText
                 android:id="@+id/grade5"
@@ -258,7 +258,6 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="numberDecimal"
-                android:text="Desired Grade"
                 android:gravity="center"/>
 
             <TextView
