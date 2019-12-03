@@ -2,11 +2,7 @@ package com.example.savemygrade;
 
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 import android.widget.Button;
@@ -42,54 +38,62 @@ public class ClassActivity extends AppCompatActivity {
                 findViewById(R.id.grade4),
                 findViewById(R.id.grade5)};
 
-        weights = new double[]{-1, -1, -1, -1 ,-1};
-        grades = new double[]{-1, -1, -1, -1, -1};
+        weights = new double[weightInputs.length];
+        grades = new double[gradeInputs.length];
 
-
+        for (int i = 0; i < weights.length; i++) {
+            weights[i] = -1;
+            grades[i] = -1;
+        }
 
         Button calculate = findViewById(R.id.calulcate);
 
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                int numWeights = 0;
+                int numGrades = 0;
+
                 for (int i = 0; i < weightInputs.length; i++) {
                     if (weightInputs[i].getText().toString().length() > 0) {
                         weights[i] = Double.parseDouble(weightInputs[i].getText().toString());
+                        numWeights++;
                     }
 
                     if (gradeInputs[i].getText().toString().length() > 0) {
                         grades[i] = Double.parseDouble(gradeInputs[i].getText().toString());
+                        numGrades++;
                     }
                 }
-
-
-
 
                 EditText desired = findViewById(R.id.desiredGrade);
                 if (desired.getText().toString().length() > 0) {
                     desiredGrade = Double.parseDouble(desired.getText().toString());
                 }
 
-                int numWeights = 0;
-                int numGrades = 0;
+                double total = 0;
 
-                for (double num: weights) {
-                    if (num > -1) {
-                        numWeights++;
+                for (double val: weights) {
+                    if (val > -1) {
+                        total += val;
                     }
                 }
 
-                for (double num: grades) {
-                    if (num > -1) {
-                        numGrades++;
-                    }
+                TextView grade = findViewById(R.id.finalGrade);
+
+                if (total != 100) {
+                    grade.setText("Category weights do not add up to 100%");
                 }
 
-                if (numWeights == 5 && numGrades == 4 && desiredGrade > -1 && desiredGrade <= 100) {
+                if (desiredGrade < 0 || desiredGrade > 100) {
+                    grade.setText("Please enter a valid desired grade!");
+                }
+
+                if (total == 100 && (numGrades + 1 == numWeights) &&
+                        desiredGrade > -1 && desiredGrade <= 100) {
                     calculateGrade();
                 }
-
-                calculateGrade();
             }
         });
 
@@ -100,10 +104,6 @@ public class ClassActivity extends AppCompatActivity {
             public void onClick(View v) {
                 LinearLayout firstRow = findViewById(R.id.LinearLayout2);
                 firstRow.setVisibility(View.GONE);
-                //((EditText) firstRow.findViewById(R.id.weight1)).setText("");
-
-                //((EditText) firstRow.findViewById(R.id.grade1)).setText("");
-
             }
         });
 
@@ -113,10 +113,6 @@ public class ClassActivity extends AppCompatActivity {
             public void onClick(View v) {
                 LinearLayout secondRow = findViewById(R.id.LinearLayout3);
                 secondRow.setVisibility(View.GONE);
-
-                //((EditText) secondRow.findViewById(R.id.weight2)).setText("");
-                //((EditText) secondRow.findViewById(R.id.grade2)).setText("");
-
             }
         });
 
@@ -126,10 +122,6 @@ public class ClassActivity extends AppCompatActivity {
             public void onClick(View v) {
                 LinearLayout thirdRow = findViewById(R.id.LinearLayout4);
                 thirdRow.setVisibility(View.GONE);
-
-                //((EditText) thirdRow.findViewById(R.id.weight3)).setText("");
-                //((EditText) thirdRow.findViewById(R.id.grade3)).setText("");
-
             }
         });
 
@@ -139,10 +131,6 @@ public class ClassActivity extends AppCompatActivity {
             public void onClick(View v) {
                 LinearLayout fourthRow = findViewById(R.id.LinearLayout5);
                 fourthRow.setVisibility(View.GONE);
-
-               // ((EditText) fourthRow.findViewById(R.id.weight4)).setText("");
-                //((EditText) fourthRow.findViewById(R.id.grade4)).setText("");
-
             }
         });
 
@@ -152,9 +140,6 @@ public class ClassActivity extends AppCompatActivity {
             public void onClick(View v) {
                 LinearLayout fifthRow = findViewById(R.id.LinearLayout6);
                 fifthRow.setVisibility(View.GONE);
-
-                //((EditText) fifthRow.findViewById(R.id.weight5)).setText("");
-                //((EditText) fifthRow.findViewById(R.id.grade5)).setText("");
             }
         });
 
