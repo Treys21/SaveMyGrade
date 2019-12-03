@@ -11,6 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class ClassActivity extends AppCompatActivity {
@@ -90,6 +91,63 @@ public class ClassActivity extends AppCompatActivity {
                 calculateGrade();
             }
         });
+
+
+        Button remove1 = findViewById(R.id.remove1);
+        remove1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LinearLayout firstRow = findViewById(R.id.LinearLayout2);
+                ((EditText) firstRow.findViewById(R.id.weight1)).setText("");
+
+                ((EditText) firstRow.findViewById(R.id.grade1)).setText("");
+            }
+        });
+
+        Button remove2 = findViewById(R.id.remove2);
+        remove2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LinearLayout secondRow = findViewById(R.id.LinearLayout3);
+                ((EditText) secondRow.findViewById(R.id.weight2)).setText("");
+                ((EditText) secondRow.findViewById(R.id.grade2)).setText("");
+
+            }
+        });
+
+        Button remove3 = findViewById(R.id.remove3);
+        remove3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LinearLayout thirdRow = findViewById(R.id.LinearLayout4);
+                ((EditText) thirdRow.findViewById(R.id.weight3)).setText("");
+                ((EditText) thirdRow.findViewById(R.id.grade3)).setText("");
+
+            }
+        });
+
+        Button remove4 = findViewById(R.id.remove4);
+        remove4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LinearLayout fourthRow = findViewById(R.id.LinearLayout5);
+                ((EditText) fourthRow.findViewById(R.id.weight4)).setText("");
+                ((EditText) fourthRow.findViewById(R.id.grade4)).setText("");
+
+            }
+        });
+
+        Button remove5 = findViewById(R.id.remove5);
+        remove5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LinearLayout fifthRow = findViewById(R.id.LinearLayout6);
+                ((EditText) fifthRow.findViewById(R.id.weight5)).setText("");
+                ((EditText) fifthRow.findViewById(R.id.grade5)).setText("");
+            }
+        });
+
+
 
     }
 

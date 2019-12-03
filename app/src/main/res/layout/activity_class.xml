@@ -56,7 +56,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="103dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/LinearLayout2" >
 
             <Button
                 android:id="@+id/remove1"
@@ -94,7 +95,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="97dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/LinearLayout3">
 
             <Button
                 android:id="@+id/remove2"
@@ -131,7 +133,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="105dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/LinearLayout4">
+
 
             <Button
                 android:id="@+id/remove3"
@@ -168,7 +172,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="95dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/LinearLayout5">
 
             <Button
                 android:id="@+id/remove4"
@@ -205,7 +210,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="95dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/LinearLayout6">
 
             <Button
                 android:id="@+id/remove5"
@@ -243,7 +249,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/LinearLayout7">
+
 
             <Button
                 android:id="@+id/calulcate"
