@@ -106,7 +106,7 @@ public class ClassActivity extends AppCompatActivity {
 
                 TextView result = findViewById(R.id.finalGrade);
 
-                if (total == 100 && (numGrades + 1 <= numWeights || numGrades == numWeights) &&
+                if (total == 100 && (numGrades + 1 <= numWeights) &&
                         desiredGrade > -1 && desiredGrade <= 100) {
                     double theGrade = calculateGrade();
                     result.setText(theGrade + "");
@@ -178,7 +178,7 @@ public class ClassActivity extends AppCompatActivity {
         double lastWeight = 100;
 
         for (int i = 0; i < grades.length; i++) {
-            if (grades[i] == -1) {
+            if (grades[i] == -1 && weights[i] != -1) {
                 lastWeight = weights[i];
             } else {
                 gradeNeeded += grades[i] * (.01 * weights[i]);
