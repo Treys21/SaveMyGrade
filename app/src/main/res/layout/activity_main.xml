@@ -7,9 +7,13 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="270dp"
         android:layout_height="174dp"
-        android:text="SaveGrade!"
+        android:gravity="center"
+        android:text="Save My Grade!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -21,8 +25,16 @@
         android:id="@+id/start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
         android:text="Start"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="530dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.493" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

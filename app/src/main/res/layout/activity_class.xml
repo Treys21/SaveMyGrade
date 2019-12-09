@@ -256,26 +256,33 @@
             <Button
                 android:id="@+id/calulcate"
                 android:layout_width="115dp"
-                android:layout_height="match_parent"
+                android:layout_height="75dp"
                 android:text="Calculate" />
 
             <EditText
                 android:id="@+id/desiredGrade"
                 android:layout_width="16dp"
-                android:layout_height="match_parent"
+                android:layout_height="67dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="numberDecimal"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:inputType="numberDecimal" />
 
             <TextView
                 android:id="@+id/finalGrade"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="77dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text=""
                 android:textSize="18dp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
         </LinearLayout>
 
     </LinearLayout>
