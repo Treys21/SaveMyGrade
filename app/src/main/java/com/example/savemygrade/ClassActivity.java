@@ -52,6 +52,14 @@ public class ClassActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                TextView grade = findViewById(R.id.finalGrade);
+                String text = "";
+
+                for (int i = 0; i < weights.length; i++) {
+                    weights[i] = -1;
+                    grades[i] = -1;
+                }
+
                 int numWeights = 0;
                 int numGrades = 0;
 
@@ -72,6 +80,10 @@ public class ClassActivity extends AppCompatActivity {
                     desiredGrade = Double.parseDouble(desired.getText().toString());
                 }
 
+                if (desired.getText().toString().length() == 0) {
+                    text = "Enter desired grade";
+                }
+
                 double total = 0;
 
                 for (double val: weights) {
@@ -80,19 +92,26 @@ public class ClassActivity extends AppCompatActivity {
                     }
                 }
 
-                TextView grade = findViewById(R.id.finalGrade);
-
                 if (total != 100) {
-                    grade.setText("Category weights do not add up to 100%");
+                    text = "Category weights do not add up to 100%";
                 }
 
                 if (desiredGrade < 0 || desiredGrade > 100) {
-                    grade.setText("Please enter a valid desired grade!");
+                    text = "Please enter a valid desired grade!";
                 }
 
-                if (total == 100 && (numGrades + 1 == numWeights) &&
+                if (numGrades == numWeights) {
+                    text = "This is your final grade";
+                }
+
+                TextView result = findViewById(R.id.finalGrade);
+
+                if (total == 100 && (numGrades + 1 <= numWeights || numGrades == numWeights) &&
                         desiredGrade > -1 && desiredGrade <= 100) {
-                    calculateGrade();
+                    double theGrade = calculateGrade();
+                    result.setText(theGrade + "");
+                } else {
+                    result.setText(text);
                 }
             }
         });
@@ -104,6 +123,7 @@ public class ClassActivity extends AppCompatActivity {
             public void onClick(View v) {
                 LinearLayout firstRow = findViewById(R.id.LinearLayout2);
                 firstRow.setVisibility(View.GONE);
+                weightInputs[0].setText("");
             }
         });
 
@@ -113,6 +133,7 @@ public class ClassActivity extends AppCompatActivity {
             public void onClick(View v) {
                 LinearLayout secondRow = findViewById(R.id.LinearLayout3);
                 secondRow.setVisibility(View.GONE);
+                weightInputs[1].setText("");
             }
         });
 
@@ -122,6 +143,7 @@ public class ClassActivity extends AppCompatActivity {
             public void onClick(View v) {
                 LinearLayout thirdRow = findViewById(R.id.LinearLayout4);
                 thirdRow.setVisibility(View.GONE);
+                weightInputs[2].setText("");
             }
         });
 
@@ -131,6 +153,7 @@ public class ClassActivity extends AppCompatActivity {
             public void onClick(View v) {
                 LinearLayout fourthRow = findViewById(R.id.LinearLayout5);
                 fourthRow.setVisibility(View.GONE);
+                weightInputs[3].setText("");
             }
         });
 
@@ -140,6 +163,7 @@ public class ClassActivity extends AppCompatActivity {
             public void onClick(View v) {
                 LinearLayout fifthRow = findViewById(R.id.LinearLayout6);
                 fifthRow.setVisibility(View.GONE);
+                weightInputs[4].setText("");
             }
         });
 
@@ -147,7 +171,7 @@ public class ClassActivity extends AppCompatActivity {
 
     }
 
-    public void calculateGrade() {
+    public double calculateGrade() {
 
 
         double gradeNeeded = 0;
@@ -161,10 +185,8 @@ public class ClassActivity extends AppCompatActivity {
             }
         }
 
-        gradeNeeded = (desiredGrade - gradeNeeded) / (lastWeight / 100);
+        return (desiredGrade - gradeNeeded) / (lastWeight / 100);
 
-        TextView grade = findViewById(R.id.finalGrade);
-        grade.setText(gradeNeeded + "");
     }
 
 }
