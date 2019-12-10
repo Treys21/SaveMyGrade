@@ -180,7 +180,7 @@ public class ClassActivity extends AppCompatActivity {
 
 
 
-    }xml
+    }
 
     public double calculateGrade() {
 
