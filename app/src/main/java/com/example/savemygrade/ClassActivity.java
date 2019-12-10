@@ -1,5 +1,6 @@
 package com.example.savemygrade;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,14 @@ public class ClassActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class);
+
+        Button leave = findViewById(R.id.leave);
+        leave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goBack();
+            }
+        });
 
         weightInputs = new EditText[]{
                 findViewById(R.id.weight1),
@@ -174,6 +183,11 @@ public class ClassActivity extends AppCompatActivity {
 
 
 
+    }
+
+    public void goBack() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     public double calculateGrade() {
