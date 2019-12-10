@@ -26,14 +26,6 @@ public class ClassActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class);
 
-        Button leave = findViewById(R.id.leave);
-        leave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goBack();
-            }
-        });
-
         weightInputs = new EditText[]{
                 findViewById(R.id.weight1),
                 findViewById(R.id.weight2),
@@ -138,6 +130,7 @@ public class ClassActivity extends AppCompatActivity {
                 LinearLayout firstRow = findViewById(R.id.LinearLayout2);
                 firstRow.setVisibility(View.GONE);
                 weightInputs[0].setText("");
+                gradeInputs[0].setText("");
             }
         });
 
@@ -148,6 +141,7 @@ public class ClassActivity extends AppCompatActivity {
                 LinearLayout secondRow = findViewById(R.id.LinearLayout3);
                 secondRow.setVisibility(View.GONE);
                 weightInputs[1].setText("");
+                gradeInputs[1].setText("");
             }
         });
 
@@ -158,6 +152,7 @@ public class ClassActivity extends AppCompatActivity {
                 LinearLayout thirdRow = findViewById(R.id.LinearLayout4);
                 thirdRow.setVisibility(View.GONE);
                 weightInputs[2].setText("");
+                gradeInputs[2].setText("");
             }
         });
 
@@ -168,6 +163,7 @@ public class ClassActivity extends AppCompatActivity {
                 LinearLayout fourthRow = findViewById(R.id.LinearLayout5);
                 fourthRow.setVisibility(View.GONE);
                 weightInputs[3].setText("");
+                gradeInputs[3].setText("");
             }
         });
 
@@ -178,17 +174,13 @@ public class ClassActivity extends AppCompatActivity {
                 LinearLayout fifthRow = findViewById(R.id.LinearLayout6);
                 fifthRow.setVisibility(View.GONE);
                 weightInputs[4].setText("");
+                gradeInputs[4].setText("");
             }
         });
 
 
 
-    }
-
-    public void goBack() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
+    }xml
 
     public double calculateGrade() {
 
