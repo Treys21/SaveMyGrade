@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class ClassActivity extends AppCompatActivity {
@@ -110,9 +111,13 @@ public class ClassActivity extends AppCompatActivity {
                         desiredGrade > -1 && desiredGrade <= 100) {
                     double theGrade = calculateGrade();
                     result.setText(theGrade + "");
+                    ProgressBar prog = findViewById(R.id.progressBar);
+                    prog.setMax(100);
+                    prog.setProgress((int)theGrade);
                 } else {
                     result.setText(text);
                 }
+
             }
         });
 

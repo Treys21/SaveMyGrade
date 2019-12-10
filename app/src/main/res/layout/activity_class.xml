@@ -256,13 +256,13 @@
             <Button
                 android:id="@+id/calulcate"
                 android:layout_width="115dp"
-                android:layout_height="75dp"
+                android:layout_height="70dp"
                 android:text="Calculate" />
 
             <EditText
                 android:id="@+id/desiredGrade"
                 android:layout_width="16dp"
-                android:layout_height="67dp"
+                android:layout_height="72dp"
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="center"
@@ -271,7 +271,7 @@
             <TextView
                 android:id="@+id/finalGrade"
                 android:layout_width="wrap_content"
-                android:layout_height="77dp"
+                android:layout_height="73dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text=""
@@ -280,9 +280,10 @@
             <ProgressBar
                 android:id="@+id/progressBar"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_width="99dp"
+                android:layout_height="32dp"
+                android:layout_weight="1"
+                android:indeterminate="false" />
         </LinearLayout>
 
     </LinearLayout>
